@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('tbl_reservas', function (Blueprint $table) {
+            $table->id('col_id');
+            $table->foreignId('col_id_tbl_cliente')->constrained('tbl_clientes', 'col_id');
+            $table->foreignId('col_id_tbl_categoria_veiculo')->constrained('tbl_categorias_veiculos', 'col_id');
+            $table->foreignId('col_id_tbl_veiculo')->nullable()->constrained('tbl_veiculos', 'col_id');
+            $table->foreignId('col_id_tbl_unidade_retirada')->constrained('tbl_unidades', 'col_id');
+            $table->foreignId('col_id_tbl_unidade_devolucao_prevista')->constrained('tbl_unidades', 'col_id');
+            $table->dateTime('col_data_hora_retirada_prevista');
+            $table->dateTime('col_data_hora_devolucao_prevista');
+            $table->string('col_status_reserva', 30);
+            $table->decimal('col_valor_previsto', 12, 2)->nullable();
+            $table->text('col_observacoes')->nullable();
+            $table->timestamp('col_created_at')->nullable();
+            $table->timestamp('col_updated_at')->nullable();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('tbl_reservas');
+    }
+};

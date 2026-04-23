@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tbl_veiculos', function (Blueprint $table) {
-            $table->id();
+            $table->id('col_id');
             $table->timestamps();
             $table->foreignId('col_id_tbl_modelo_veiculo')->constrained('tbl_modelos_veiculos', 'col_id');
             $table->foreignId('col_id_tbl_cor')->nullable()->constrained('tbl_cores', 'col_id');
@@ -29,9 +29,8 @@ return new class extends Migration
             $table->decimal('col_valor_diaria_base', 10, 2)->nullable();
             $table->text('col_observacoes')->nullable();
             $table->boolean('col_ativo')->default(true);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
-            $table->softDeletes('col_deleted_at');
+            $table->timestamps();
+            $table->softDeletes();
 
         });
     }

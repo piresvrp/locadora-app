@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreignId('col_id_tbl_apolice_seguro')->constrained('tbl_apolices', 'col_id');
             $table->date('col_data_inicio')->nullable();
             $table->date('col_data_fim')->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
             $table->unique(['col_id_tbl_veiculo', 'col_id_tbl_apolice_seguro', 'col_data_inicio'], 'uk_veiculo_apolice_inicio');
         });
     }

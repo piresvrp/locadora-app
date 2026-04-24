@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('col_id_tbl_locacao')->constrained('tbl_locacoes', 'col_id');
             $table->foreignId('col_id_tbl_condutor_adicional')->constrained('tbl_condutores_adicionais', 'col_id');
             $table->boolean('col_principal')->default(false);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
             $table->unique(['col_id_tbl_locacao', 'col_id_tbl_condutor_adicional'], 'uk_locacao_condutor');
         });
     }

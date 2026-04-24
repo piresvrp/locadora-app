@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('tbl_cores', function (Blueprint $table) {
             $table->id('col_id');
             $table->string('col_nome', 40)->unique();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
-
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

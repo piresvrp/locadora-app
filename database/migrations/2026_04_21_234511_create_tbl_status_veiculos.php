@@ -9,8 +9,8 @@ return new class extends Migration {
             $table->id('col_id');
             $table->string('col_nome', 40)->unique();
             $table->boolean('col_permite_locacao')->default(true);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
     public function down(): void

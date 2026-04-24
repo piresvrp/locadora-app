@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('tbl_veiculos', function (Blueprint $table) {
             $table->id('col_id');
-            $table->timestamps();
             $table->foreignId('col_id_tbl_modelo_veiculo')->constrained('tbl_modelos_veiculos', 'col_id');
             $table->foreignId('col_id_tbl_cor')->nullable()->constrained('tbl_cores', 'col_id');
             $table->foreignId('col_id_tbl_unidade_atual')->nullable()->constrained('tbl_unidades', 'col_id');

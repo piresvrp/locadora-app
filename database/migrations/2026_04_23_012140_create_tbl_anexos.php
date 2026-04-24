@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('col_tipo_arquivo', 50)->nullable();
             $table->string('col_url_arquivo', 255);
             $table->dateTime('col_enviado_em')->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

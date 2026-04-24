@@ -22,8 +22,8 @@ return new class extends Migration
             $table->decimal('col_combustivel_percentual', 5, 2)->nullable();
             $table->longText('col_fotos_json')->nullable();
             $table->text('col_observacoes')->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

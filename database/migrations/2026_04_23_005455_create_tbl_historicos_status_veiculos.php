@@ -19,8 +19,8 @@ return new class extends Migration
             $table->timestamp('col_data_inicio');
             $table->timestamp('col_data_fim')->nullable();
             $table->string('col_motivo', 255)->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

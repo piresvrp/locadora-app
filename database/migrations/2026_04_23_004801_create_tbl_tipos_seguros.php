@@ -16,9 +16,8 @@ return new class extends Migration
             $table->string('col_nome', 60);
             $table->string('col_descricao', 255)->nullable();
             $table->boolean('col_ativo')->default(true);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
-
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

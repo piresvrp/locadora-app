@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('col_status_pagamento', 20)->default('pendente');
             $table->string('col_codigo_transacao', 80)->nullable();
             $table->string('col_observacoes', 255)->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

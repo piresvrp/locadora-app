@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id('col_id');
             $table->string('col_nome', 60)->unique();
             $table->string('col_gravidade', 20)->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
-
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

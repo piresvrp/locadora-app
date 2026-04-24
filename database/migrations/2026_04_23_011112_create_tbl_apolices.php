@@ -21,8 +21,8 @@ return new class extends Migration
             $table->date('col_data_fim')->nullable();
             $table->decimal('col_valor_premio', 12, 2)->nullable();
             $table->boolean('col_ativo')->default(true);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('col_perfil', 40);
             $table->timestamp('col_ultimo_login')->nullable();
             $table->boolean('col_ativo')->default(true);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

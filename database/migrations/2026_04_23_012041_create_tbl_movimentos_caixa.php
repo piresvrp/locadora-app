@@ -20,8 +20,8 @@ return new class extends Migration
             $table->dateTime('col_data_movimento');
             $table->decimal('col_valor', 12, 2);
             $table->string('col_descricao', 255)->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

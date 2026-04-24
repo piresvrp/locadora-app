@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedSmallInteger('col_capacidade_bagagem')->nullable();
             $table->unsignedSmallInteger('col_capacidade_passageiros')->nullable();
             $table->boolean('col_ativo')->default(true);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

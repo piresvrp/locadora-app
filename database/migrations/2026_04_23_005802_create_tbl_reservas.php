@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('col_status_reserva', 30);
             $table->decimal('col_valor_previsto', 12, 2)->nullable();
             $table->text('col_observacoes')->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -22,8 +22,8 @@ return new class extends Migration
             $table->decimal('col_valor_total', 12, 2)->nullable();
             $table->string('col_status_os', 30)->nullable();
             $table->text('col_observacoes')->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

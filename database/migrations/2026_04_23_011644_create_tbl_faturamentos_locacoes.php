@@ -20,8 +20,8 @@ return new class extends Migration
             $table->decimal('col_total', 12, 2)->default(0);
             $table->string('col_status_faturamento', 20)->default('aberto');
             $table->dateTime('col_data_fechamento')->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->date('col_vencimento')->nullable();
             $table->string('col_arquivo_url', 255)->nullable();
             $table->boolean('col_ativo')->default(true);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('col_item', 80);
             $table->string('col_situacao', 30)->nullable();
             $table->string('col_observacao', 255)->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

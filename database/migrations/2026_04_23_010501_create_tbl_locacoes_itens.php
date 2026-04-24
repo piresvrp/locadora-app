@@ -19,8 +19,8 @@ return new class extends Migration
             $table->decimal('col_quantidade', 10, 2)->default(1);
             $table->decimal('col_valor_unitario', 12, 2)->default(0);
             $table->decimal('col_valor_total', 12, 2)->default(0);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

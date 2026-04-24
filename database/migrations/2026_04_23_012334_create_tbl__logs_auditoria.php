@@ -20,8 +20,8 @@ return new class extends Migration
             $table->longText('col_dados_anteriores')->nullable();
             $table->longText('col_dados_novos')->nullable();
             $table->dateTime('col_realizado_em');
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

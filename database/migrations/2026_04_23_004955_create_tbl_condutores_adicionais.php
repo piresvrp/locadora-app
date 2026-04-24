@@ -21,8 +21,8 @@ return new class extends Migration
             $table->date('col_cnh_validade')->nullable();
             $table->string('col_telefone', 20)->nullable();
             $table->boolean('col_ativo')->default(true);
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

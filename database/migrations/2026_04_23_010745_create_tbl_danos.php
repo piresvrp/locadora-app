@@ -20,9 +20,8 @@ return new class extends Migration
             $table->decimal('col_valor_estimado', 12, 2)->nullable();
             $table->string('col_responsavel_cobranca', 20)->nullable();
             $table->string('col_status_dano', 30)->nullable();
-            $table->timestamp('col_created_at')->nullable();
-            $table->timestamp('col_updated_at')->nullable();
-
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -48,4 +48,9 @@ class Veiculo extends Model
     {
         return $this->belongsTo(StatusVeiculo::class, 'col_id_tbl_status_veiculo');
     }
+
+    public function marca()
+    {
+        return $this->belongsTo(Marca::class, 'col_id_tbl_marca');
+    }
 }

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VeiculoController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ModeloVeiculoController;
+use App\Http\Controllers\CorController;
 
 Route::get('/modelos-veiculos', [ModeloVeiculoController::class, 'index']);
 Route::get('/modelos-veiculos/all', [ModeloVeiculoController::class, 'getAll']);
@@ -26,3 +27,10 @@ Route::get('/veiculos/{id}', [VeiculoController::class, 'findById']);
 Route::post('/veiculos', [VeiculoController::class, 'store']);
 Route::put('/veiculos/{id}', [VeiculoController::class, 'update']);
 Route::delete('/veiculos/{id}', [VeiculoController::class, 'destroy']);
+
+Route::get('/cores', [CorController::class, 'index']);
+Route::get('/cores/all', [CorController::class, 'getAll']);
+Route::get('/cores/{id}', [CorController::class, 'findById']);
+Route::post('/cores', [CorController::class, 'store']);
+Route::put('/cores/{id}', [CorController::class, 'update']);
+Route::delete('/cores/{id}', [CorController::class, 'destroy']);

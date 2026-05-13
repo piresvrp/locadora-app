@@ -6,7 +6,7 @@ use App\Http\Controllers\VeiculoController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ModeloVeiculoController;
 use App\Http\Controllers\CorController;
-
+use App\Http\Controllers\UnidadeController;
 Route::get('/modelos-veiculos', [ModeloVeiculoController::class, 'index']);
 Route::get('/modelos-veiculos/all', [ModeloVeiculoController::class, 'getAll']);
 Route::get('/modelos-veiculos/{id}', [ModeloVeiculoController::class, 'findById']);
@@ -33,4 +33,12 @@ Route::get('/cores/all', [CorController::class, 'getAll']);
 Route::get('/cores/{id}', [CorController::class, 'findById']);
 Route::post('/cores', [CorController::class, 'store']);
 Route::put('/cores/{id}', [CorController::class, 'update']);
-Route::delete('/cores/{id}', [CorController::class, 'destroy']);
+Route::delete('/cores/{id}', [CorController::class, 'destroy']);
+
+
+Route::get('/unidades', [UnidadeController::class, 'index']);
+Route::get('/unidades/all', [UnidadeController::class, 'getAll']);
+Route::get('/unidades/{id}', [UnidadeController::class, 'findById']);
+Route::post('/unidades', [UnidadeController::class, 'store']);
+Route::put('/unidades/{id}', [UnidadeController::class, 'update']);
+Route::delete('/unidades/{id}', [UnidadeController::class, 'destroy']);

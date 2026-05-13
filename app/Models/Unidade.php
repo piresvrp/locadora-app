@@ -22,6 +22,10 @@ class Unidade extends Model
 
     public function veiculos()
     {
-        return $this->hasMany(Veiculo::class, 'col_id_tbl_unidade_atual');
+        return $this->hasMany(
+            Veiculo::class,
+            'col_id_tbl_unidade_atual',
+            'col_id'
+        );
     }
 }

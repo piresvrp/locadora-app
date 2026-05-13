@@ -39,10 +39,6 @@ class Veiculo extends Model
         return $this->belongsTo(Cor::class, 'col_id_tbl_cor');
     }
 
-    public function unidade()
-    {
-        return $this->belongsTo(Unidade::class, 'col_id_tbl_unidade_atual');
-    }
 
     public function statusVeiculo()
     {
@@ -52,5 +48,14 @@ class Veiculo extends Model
     public function marca()
     {
         return $this->belongsTo(Marca::class, 'col_id_tbl_marca');
+    }
+    
+    public function unidade()
+    {
+        return $this->belongsTo(
+            Unidade::class,
+            'col_id_tbl_unidade_atual',
+            'col_id'
+        );
     }
 }

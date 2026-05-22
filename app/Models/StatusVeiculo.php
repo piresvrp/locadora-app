@@ -13,7 +13,7 @@ class StatusVeiculo extends Model
     protected $primaryKey = 'col_id';
     protected $fillable = [
         'col_nome',
-        'col_cor',
+        'col_permite_locacao',
     ];
 
     public function veiculos()

@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class StoreUnidadeRequest extends FormRequest
+class StatusVeiculoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,17 +25,18 @@ class StoreUnidadeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'col_nome' => 'required|string|max:120',
-            'col_tipo_unidade' => 'nullable|string|max:30',
-            'col_telefone' => 'nullable|string|max:20',
-            'col_email' => 'nullable|email|max:120',
-            'col_cep' => 'nullable|string|max:10',
-            'col_logradouro' => 'nullable|string|max:150',
-            'col_numero' => 'nullable|string|max:20',
-            'col_bairro' => 'nullable|string|max:80',
-            'col_cidade' => 'nullable|string|max:80',
-            'col_uf' => 'nullable|string|size:2',
-            'col_ativo' => 'nullable|boolean',
+            'col_nome' => 'required|string|max:40|unique:tbl_status_veiculos,col_nome,' . $this->route('id') . ',col_id',
+            'col_permite_locacao' => 'nullable|boolean',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'col_nome.required' => 'O nome do status é obrigatório',
+            'col_nome.unique' => 'Este status já está cadastrado',
+            'col_nome.max' => 'O nome não pode ter mais que 40 caracteres',
+            'col_permite_locacao.boolean' => 'O campo permite locação deve ser um valor booleano',
         ];
     }
 

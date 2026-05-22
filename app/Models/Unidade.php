@@ -3,20 +3,26 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Veiculo;
 
 class Unidade extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'tbl_unidades';
     protected $primaryKey = 'col_id';
     protected $fillable = [
         'col_nome',
-        'col_endereco',
-        'col_cidade',
-        'col_estado',
-        'col_pais',
-        'col_cep',
+        'col_tipo_unidade',
         'col_telefone',
         'col_email',
+        'col_cep',
+        'col_logradouro',
+        'col_numero',
+        'col_bairro',
+        'col_cidade',
+        'col_uf',
         'col_ativo',
     ];
 

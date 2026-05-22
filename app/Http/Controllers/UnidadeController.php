@@ -51,7 +51,7 @@ class UnidadeController extends Controller
         return response()->json([
             'message' => 'Unidade atualizada com sucesso',
             'data' => $unidade
-        ], 201);
+        ], 200);
     }
 
     public function destroy($id)
@@ -81,6 +81,6 @@ class UnidadeController extends Controller
         return response()->json([
             'message' => 'Unidade encontrada',
             'data' => $unidade
-        ], 201);
+        ], 200);
     }
 }

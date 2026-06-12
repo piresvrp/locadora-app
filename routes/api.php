@@ -8,6 +8,15 @@ use App\Http\Controllers\ModeloVeiculoController;
 use App\Http\Controllers\CorController;
 use App\Http\Controllers\UnidadeController;
 use App\Http\Controllers\StatusVeiculoController;
+
+Route::get('/teste-cors', function () {
+    return response('OK TESTE CORS', 200, [
+        'Access-Control-Allow-Origin' => 'http://localhost:5174',
+        'Access-Control-Allow-Methods' => 'GET, POST, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers' => 'Content-Type, Authorization, X-Requested-With, Accept',
+        'Content-Type' => 'application/json',
+    ]);
+});
 Route::get('/modelos-veiculos', [ModeloVeiculoController::class, 'index']);
 Route::get('/modelos-veiculos/all', [ModeloVeiculoController::class, 'getAll']);
 Route::get('/modelos-veiculos/{id}', [ModeloVeiculoController::class, 'findById']);
